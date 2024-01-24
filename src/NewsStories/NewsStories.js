@@ -4,7 +4,7 @@ import NewsCard from '../NewsCard/NewsCard';
 
 
 
-export default function NewsStories({stories}) {
+export default function NewsStories({stories, displayNewsStory}) {
     // console.log(stories, 'stories')
     // console.log(topHeadlines, 'top headlines')
     const individualCards = stories.map(story => {
@@ -16,7 +16,10 @@ export default function NewsStories({stories}) {
                 title={story.title}
                 url={story.url}
                 urlToImage={story.urlToImage}
-                key={story.author}
+                key={story.url}
+                id={story.publishedAt}
+                date= {new Date(story.publishedAt).toLocaleString()}
+                displayNewsStory={displayNewsStory}
             />
         )
     })
