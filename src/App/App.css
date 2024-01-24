@@ -1,4 +1,65 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Newsreader', 'sans-serif', 'bold 700';
+  background-image: url('/public/Newspaper.jpg');
+  /* background-size: cover; */
+  background-position: right;
+  color: white;
+}
+
+header {
+  font-size: 80px;
+  margin: 30px;
+  font-weight: 700;
+  text-shadow: 0 10px 40px rgb(38, 0, 255);
+}
+
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+header:hover {
+  animation: bounce 2s infinite;
+  text-shadow: 0 0 10px rgb(0, 85, 30);
+}
+
 .App {
+  text-align: center;
+  width: 70vw;
+  /* height: 50vh; */
+  align-items: center;
+  overflow-y: auto;
+  background-color: white;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/* .news-stories {
+  width: 50vw;
+  height: 20vh;
+} */
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +96,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
