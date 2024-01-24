@@ -6,8 +6,7 @@ export default function NewsCard({author, content, description, title, url, urlT
         <div>
             <h1>{title}</h1>
             <h2>{author}</h2>
-            <h4>{description}</h4>
-            <p>{content}</p>
+            <p>{description}</p>
         </div>
     )
 }
