@@ -39,11 +39,9 @@ export default function App() {
         <Route
           path="/"
           element={
-            <>
               <div className="App">
                 <NewsStories className="news-stories" stories={stories} displayNewsStory={displayNewsStory}/>
               </div>
-            </>
             }
             />
         <Route path="/article/:id" element={<SingleNewsDetails selectedNewsStory={selectedNewsStory} displayHomePage={displayHomePage}/>} />
