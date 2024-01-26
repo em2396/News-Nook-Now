@@ -26,7 +26,7 @@ export default function NewsStories({stories, displayNewsStory}) {
 
 
     return (
-        <div>
+        <div className="individual-cards">
             {individualCards}
         </div>
     )
