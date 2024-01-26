@@ -3,6 +3,8 @@ import './App.css';
 import NewsStories from '../NewsStories/NewsStories';
 import topHeadlines from '../sampleData/topHeadlines';
 import SingleNewsDetails from '../SingleNewsDetails/SingleNewDetails';
+import Search from '../Search/Search';
+import SearchResults from '../SearchResults/SearchResults';
 import { Routes, Route, Link } from 'react-router-dom';
 // import { getStories } from '../apiCalls/apiCall';
 
@@ -40,11 +42,13 @@ export default function App() {
           path="/"
           element={
               <div className="App">
+                <Search className="search-component"/>
                 <NewsStories className="news-stories" stories={stories} displayNewsStory={displayNewsStory}/>
               </div>
             }
             />
         <Route path="/article/:id" element={<SingleNewsDetails selectedNewsStory={selectedNewsStory} displayHomePage={displayHomePage}/>} />
+        <Route path="/search" element={<SearchResults />} />
       </Routes>
     </main>
   );

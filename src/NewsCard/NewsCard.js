@@ -6,7 +6,7 @@ export default function NewsCard({author, description, title, date, id, urlToIma
     //headline, image, description (if present), date
     //When clicked, it should show the headline, image, date, content, and source
         return (
-        <div>
+        <div className='single-story'>
             <h1>{title}</h1>
             <h2>{author}</h2>
             <p>{description}</p>

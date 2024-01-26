@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
+import './SingleNewsDetails.css';
 
 export default function SingleNewDetails({selectedNewsStory, displayHomePage}) {
-    console.log(selectedNewsStory, 'made it ')
-
-    //A “detailed” view for each article (headline, image, date, content, source
     return (
-        <div>
+        <div className='details-container'>
             <h1>{selectedNewsStory.title}</h1>
             <h2>{selectedNewsStory.author}</h2>
             <p>{selectedNewsStory.content}</p>
