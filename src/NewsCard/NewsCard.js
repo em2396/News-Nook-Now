@@ -2,11 +2,9 @@ import './NewsCard.css';
 import { Link } from 'react-router-dom';
 
 export default function NewsCard({author, description, title, date, id, urlToImage, displayNewsStory}) {
-
-    //headline, image, description (if present), date
-    //When clicked, it should show the headline, image, date, content, and source
+    console.log(title, id)
         return (
-        <div>
+        <div className='single-story'>
             <h1>{title}</h1>
             <h2>{author}</h2>
             <p>{description}</p>

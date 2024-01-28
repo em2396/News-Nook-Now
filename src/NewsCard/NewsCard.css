@@ -2,3 +2,8 @@ img {
     width: 50vw;
     height: auto;
 }
+
+.single-story:hover {
+    border: 4px solid rgba(3, 7, 219, 0.517);
+    transition: border 0.3s ease;
+}
