@@ -31,6 +31,14 @@ I am a front-end developer who worked remotely to complete this application. Thi
 
 ## 🎥 Preview 
 
+
+https://github.com/em2396/News-Nook-Now/assets/116819092/8c4e1ba6-745d-4aba-b051-5c594ace266a
+
+
+## Project Board 
+[Project](https://github.com/users/em2396/projects/5)
+
+
 ## Figma link
 [Figma](https://www.figma.com/file/vuAaYqpscHcYgtgAr6KOy3/Untitled?type=whiteboard&node-id=0-1&t=zvQ1c8VATbW9FvGL-0)
 
