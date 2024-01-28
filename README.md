@@ -23,7 +23,7 @@ News Nook Now
 </div>
 
 ## 💭 Abstract
-
+"News Nook Now" offers users a convenient and engaging platform to stay informed about current events. The combination of a clean user interface, powerful search functionality, and detailed article views makes it a valuable tool for users seeking a straightforward yet feature-rich news experience. The project showcases the capabilities of React in building modern and responsive web applications.
 
 
 ## 📝  Context
@@ -44,7 +44,7 @@ https://github.com/em2396/News-Nook-Now/assets/116819092/8c4e1ba6-745d-4aba-b051
 
 
 ## 🔌 Server Setup
-1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository. Run the following command: 
+1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository. Run the following command: git clone git@github.com:em2396/News-Nook-Now.git
 2. Install the dependencies: Run the following command in the cloned repository directory: npm install
 3. Run the React app: Run the following command in the cloned repository directory: npm start
 4. Open the app in your web browser by navigating to http://localhost:3000
