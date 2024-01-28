@@ -1,22 +1,24 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 import './Search.css';
 import { getEverything } from '../apiCalls/apiCall';
-import everythingData from '../sampleData/everythingData';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function Search({setFilteredStories, displayFiltered}) {
+export default function Search({setFilteredStories}) {
     const [ search, setSearch ] = useState('');
     const navigate = useNavigate();
-
+    
     function searchResults(event) {
         event.preventDefault();
-        const resultOfSearch = everythingData.filter(story =>
-          story.title.toLowerCase().includes(search.toLowerCase())
-        );
-        setFilteredStories(resultOfSearch);
-        console.log(resultOfSearch, 'results of search')
+        getEverything()
+            .then(data => {
+                const resultOfSearch = data.articles.filter(story =>
+                  story.title.toLowerCase().includes(search.toLowerCase())
+                );
+                setFilteredStories(resultOfSearch);
+                navigate('/list-of-articles')
+            })
       }
-    
+
     return (
         <form>
             <input className='search-input'
@@ -30,4 +32,3 @@ export default function Search({setFilteredStories, displayFiltered}) {
         </form>
     )
 }
-
