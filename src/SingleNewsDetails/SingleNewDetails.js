@@ -2,6 +2,14 @@ import { Link } from 'react-router-dom';
 import './SingleNewsDetails.css';
 
 export default function SingleNewDetails({selectedNewsStory, displayHomePage}) {
+    console.log(selectedNewsStory,'inside single  component')
+
+    if (!selectedNewsStory) {
+        // If selectedNewsStory is not available, you can handle it here
+        return <p>Loading...</p>; // or any other fallback behavior
+      }
+
+
     return (
         <div className='details-container'>
             <h1>{selectedNewsStory.title}</h1>

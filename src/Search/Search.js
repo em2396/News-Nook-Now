@@ -1,30 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import './Search.css';
 import { getEverything } from '../apiCalls/apiCall';
 import everythingData from '../sampleData/everythingData';
+import { useNavigate  } from 'react-router-dom';
 
-export default function Search() {
+export default function Search({setFilteredStories, displayFiltered}) {
     const [ search, setSearch ] = useState('');
+    const navigate = useNavigate();
 
     function searchResults(event) {
-        // getEverything()
-        //     .then(data => {
-        //         const result = data.filter(text => text.toLowerCase().includes(search.toLowerCase()));
-        //     })
-        const result = everythingData.filter(one => one.toLowerCase().includes(search.toLowerCase()));
-        return result; 
-    }
-
+        event.preventDefault();
+        const resultOfSearch = everythingData.filter(story =>
+          story.title.toLowerCase().includes(search.toLowerCase())
+        );
+        setFilteredStories(resultOfSearch);
+        console.log(resultOfSearch, 'results of search')
+      }
+    
     return (
         <form>
             <input className='search-input'
                 type="text"
-                placeholder="search"
+                placeholder="search by title"
                 name="search"
                 value={search}
                 onChange={event => setSearch(event.target.value)}
-            />
-            <button className='search-button' onClick={event => searchResults(event)}>Search</button>
+                />
+            <button className='search-button' onClick={(event) => searchResults(event)}>Search</button>
         </form>
     )
 }
+
