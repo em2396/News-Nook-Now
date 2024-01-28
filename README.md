@@ -2,8 +2,6 @@
 
 News Nook Now
 ![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
-
-## :desktop_computer: Deployed Link 
  
 
 ## 💾 Technologies Used
@@ -33,6 +31,9 @@ I am a front-end developer who worked remotely to complete this application. Thi
 
 ## 🎥 Preview 
 
+## Figma link
+[Figma](https://www.figma.com/file/vuAaYqpscHcYgtgAr6KOy3/Untitled?type=whiteboard&node-id=0-1&t=zvQ1c8VATbW9FvGL-0)
+
 
 ## 🔌 Server Setup
 1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository. Run the following command: 
@@ -45,12 +46,12 @@ I am a front-end developer who worked remotely to complete this application. Thi
 
 
 ## 🥇 Wins
-⭐ 
-⭐ 
-⭐ 
+⭐ Successfully integrating react and an API
+⭐ I am proud of the styling and search functionality
+⭐ The more I practice creating react apps, the more comfortable I become with them. I know it takes time and practice.
 
 
 ## 🚧 Challenges
-❗
-❗ 
-❗ 
+❗ I really struggled with the search functionality. There was a weird error I couldn't fix. My solution was to essentially duplicate components that were doing the same thing to get the searched articles to display
+❗ I was surprised by the amount of time it took me to complete this project. Sometimes overcoming a bug isn't planned and it adds a lot of time to your expected time.
+❗ Only having 100 api calls/day can make it challenging when you switch from using sample data and come across a different error you weren't expecting.
