@@ -1,21 +1,18 @@
 import { Link } from 'react-router-dom';
+import './SearchResults.css'
 
 export default function SearchResults({filteredStories, displayHomePage}) {
 
-    console.log(filteredStories,'inside single  component')
-    if (!filteredStories) {
-        return <p>Unable to dispalay</p>
-      }
-
-
     return (
-        <div className='details-container'>
+        <div className='search-details-container'>
             <h1>{filteredStories.title}</h1>
             <h2>{filteredStories.author}</h2>
             <p>{filteredStories.content}</p>
             <p>Source : {filteredStories.source.name}</p>
-            <p>Link to original article: {filteredStories.url}</p>
             <img src={filteredStories.urlToImage}/>
+            <p>
+                <a href={filteredStories.url} target="_blank" rel="noopener noreferrer">Link to original article</a>
+            </p>
             <Link to="/"> 
                 <button className="back-to-home" onClick={() => displayHomePage()}>Back To Home</button>
             </Link>

@@ -1,0 +1,19 @@
+img {
+    width: 50vw;
+    height: auto;
+}
+
+.single-story:hover {
+    border: 4px solid rgba(3, 7, 219, 0.517);
+    transition: border 0.3s ease;
+}
+
+.single-story {
+    text-align: center;
+    width: 70vw;
+    align-items: center;
+    overflow-y: auto;
+    background-color: white;
+    margin-top: none;
+    margin-bottom: 20px;
+  }

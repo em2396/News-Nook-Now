@@ -5,8 +5,10 @@ import topHeadlines from '../sampleData/topHeadlines';
 import SingleNewsDetails from '../SingleNewsDetails/SingleNewDetails';
 import Search from '../Search/Search';
 import SearchResults from '../SearchResults/SearchResults';
+import SearchNewsStories from '../SearchNewsStories/SearchNewsStories'
 import { Routes, Route, Link } from 'react-router-dom';
-// import { getStories } from '../apiCalls/apiCall';
+import { getEverything } from '../apiCalls/apiCall';
+
 
 export default function App() {
   const [ stories, setStories ] = useState(topHeadlines); 
@@ -14,13 +16,12 @@ export default function App() {
   const [filteredStories, setFilteredStories] = useState([]);
   
 
-  // useEffect(() => {
-  //  getStories() 
-  //    .then(data => {
-  //        console.log(data)
-  //        setStories(data)
-  //})
-  // }, [])
+  useEffect(() => {
+   getEverything() 
+     .then(data => {
+         setStories(data.articles)
+  })
+  }, [])
 
   function displayNewsStory(id) {
     const singleStory = stories.find(news => {
@@ -28,13 +29,17 @@ export default function App() {
     })
     setSelectedNewsStory(singleStory);
   };
-  console.log(selectedNewsStory, 'selected news story')
 
+
+  function displaySearchedStories(id) {
+    const singleStory = filteredStories.find(news => news.publishedAt === id)
+    setFilteredStories(singleStory);
+  }
   
   function displayHomePage() {
     setSelectedNewsStory(null);
+    setFilteredStories(null);
   }
-  
   
   
   return (
@@ -48,20 +53,14 @@ export default function App() {
           element={
             <div className="App">
                 <Search className="search-component" setFilteredStories={setFilteredStories} />
-                <NewsStories className="news-stories" stories={filteredStories.length > 0 ? filteredStories : stories} displayNewsStory={displayNewsStory}/>
-              </div>
+                <NewsStories className="news-stories" stories={stories} displayNewsStory={displayNewsStory}/>
+            </div>
             }
             />
-        <Route path="/article/:id" element={<SingleNewsDetails selectedNewsStory={selectedNewsStory} displayHomePage={displayHomePage}/>} />
-        <Route path="/search" element={<SearchResults filteredStories={filteredStories} displayHomePage={displayHomePage}/>} />
+        <Route path="/list-of-articles" element={ <SearchNewsStories filteredStories={filteredStories} displaySearchedStories={displaySearchedStories}/> }/>
+        <Route path="/article/:id" element={<SingleNewsDetails selected={selectedNewsStory} displayHomePage={displayHomePage}/>} />
+        <Route path="/search/:id" element={<SearchResults filteredStories={filteredStories} displayHomePage={displayHomePage}/>} />
       </Routes>
     </main>
   );
 }
-
-
-// function displayFiltered(resultOfSearch) {
-//   console.log(resultOfSearch, 'inside app')
-//   setSelectedNewsStory(resultOfSearch)
-// }
-// console.log(selectedNewsStory, 'inside app usestate')
